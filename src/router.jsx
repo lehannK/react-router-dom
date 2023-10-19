@@ -4,6 +4,7 @@ import Products from "./pages/Products";
 import Cart from "./pages/Cart";
 import Admin from "./pages/admin/Admin";
 import RootLayout from "./components/RootLayout";
+import Product from "./pages/Product";
 
 const router = createBrowserRouter([
   {
@@ -11,12 +12,16 @@ const router = createBrowserRouter([
     element: <RootLayout />,
     children: [
       {
-        path: "/dist/index.html",
+        index: true,
         element: <Home />,
       },
       {
         path: "/products",
         element: <Products />,
+      },
+      {
+        path: "products/:productId",
+        element: <Product />,
       },
       {
         path: "/cart",
